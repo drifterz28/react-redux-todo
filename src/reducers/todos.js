@@ -1,39 +1,30 @@
-import undoable from 'redux-undo';
+import {create} from './create-reducer';
 import * as c from '../constants';
 
 const todo = (state, action) => {
-  switch (action.type) {
-    case c.ADD_TODO:
-      return {
-        id: action.id,
-        text: action.text,
-        completed: false
-      };
-    case c.TOGGLE_TODO:
-      if (state.id !== action.id) {
-        return state;
+  if (state.id !== action.id) {
+    return state;
+  }
+  return {
+    ...state,
+    completed: !state.completed
+  };
+};
+
+const actions = {
+  [c.ADD_TODO](state, { id, text }) {
+    return [
+      ...state,
+      {
+      id: id,
+      text: text,
+      completed: false
       }
-
-      return {
-        ...state,
-        completed: !state.completed
-      };
-    default:
-      return state;
+    ];
+  },
+  [c.TOGGLE_TODO](state, action) {
+    return state.map(t => todo(t, action));
   }
 };
 
-const todos = (state = [], action) => {
-  switch (action.type) {
-    case c.ADD_TODO:
-      return [...state, todo(undefined, action)];
-    case c.TOGGLE_TODO:
-      return state.map(t => todo(t, action));
-    default:
-      return state;
-  }
-};
-
-const undoableTodos = undoable(todos);
-
-export default undoableTodos;
+export default create(actions, []);

@@ -1,12 +1,10 @@
 import * as c from '../constants';
+import {create} from './create-reducer';
 
-const visibilityFilter = (state = 'SHOW_ALL', action) => {
-  switch (action.type) {
-    case c.SET_VISIBILITY_FILTER:
-      return action.filter;
-    default:
-      return state;
+const actions = {
+  [c.SET_VISIBILITY_FILTER](state, {filter}) {
+    return filter;
   }
 };
 
-export default visibilityFilter;
+export default create(actions, 'SHOW_ALL');

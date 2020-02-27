@@ -1,14 +1,15 @@
 import React from 'react';
 import FilterLink from './Link';
+import * as c from '../constants';
 
 const Footer = () => (
   <p>
     {' '}
-    <FilterLink filter='SHOW_ALL'>All</FilterLink>
+    <FilterLink filter={c.SHOW_ALL}>All</FilterLink>
     {', '}
-    <FilterLink filter='SHOW_ACTIVE'>Active</FilterLink>
+    <FilterLink filter={c.SHOW_ACTIVE}>Active</FilterLink>
     {', '}
-    <FilterLink filter='SHOW_COMPLETED'>Completed</FilterLink>
+    <FilterLink filter={c.SHOW_COMPLETED}>Completed</FilterLink>
   </p>
 );
 

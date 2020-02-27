@@ -3,23 +3,17 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setVisibilityFilter } from '../actions';
 
-const Link = ({ active, filter, children, setVisibilityFilter }) => {
-  if (active) {
-    return <span>{children}</span>;
-  }
-
-  return (
-    <a
-      href='#'
-      onClick={e => {
-        e.preventDefault();
-        setVisibilityFilter(filter);
-      }}
-    >
-      {children}
-    </a>
-  );
-};
+const Link = ({ active, filter, children, setVisibilityFilter }) => (
+  <button
+    disabled={active}
+    onClick={e => {
+      e.preventDefault();
+      setVisibilityFilter(filter);
+    }}
+  >
+    {children}
+  </button>
+);
 
 Link.propTypes = {
   active: PropTypes.bool.isRequired,
