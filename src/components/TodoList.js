@@ -40,7 +40,7 @@ export default connect(
   state => ({
     todos: getVisibleTodos(state.todos.present, state.visibilityFilter)
   }),
-  {
+  ({
     onTodoClick: toggleTodo
-  }
+  })
 )(TodoList);

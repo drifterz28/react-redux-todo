@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setVisibilityFilter } from '../actions';
 
-const Link = ({ active, children, setVisibilityFilter }) => {
+const Link = ({ active, filter, children, setVisibilityFilter }) => {
   if (active) {
     return <span>{children}</span>;
   }
@@ -13,7 +13,7 @@ const Link = ({ active, children, setVisibilityFilter }) => {
       href='#'
       onClick={e => {
         e.preventDefault();
-        setVisibilityFilter();
+        setVisibilityFilter(filter);
       }}
     >
       {children}
@@ -24,14 +24,16 @@ const Link = ({ active, children, setVisibilityFilter }) => {
 Link.propTypes = {
   active: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
+  filter: PropTypes.string.isRequired,
   setVisibilityFilter: PropTypes.func.isRequired
 };
 
 export default connect(
   (state, ownProps) => ({
+    filter: ownProps.filter,
     active: ownProps.filter === state.visibilityFilter
   }),
-  {
+  ({
     setVisibilityFilter
-  }
+  })
 )(Link);
