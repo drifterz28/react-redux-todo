@@ -33,7 +33,7 @@ export default connect(
     filter: ownProps.filter,
     active: ownProps.filter === state.visibilityFilter
   }),
-  ({
+  {
     setVisibilityFilter
-  })
+  }
 )(Link);
