@@ -1,16 +1,18 @@
+import * as c from '../constants';
+
 let nextTodoId = 0;
 export const addTodo = text => ({
-  type: 'ADD_TODO',
+  type: c.ADD_TODO,
   id: nextTodoId++,
   text
 });
 
 export const setVisibilityFilter = filter => ({
-  type: 'SET_VISIBILITY_FILTER',
+  type: c.SET_VISIBILITY_FILTER,
   filter
 });
 
 export const toggleTodo = id => ({
-  type: 'TOGGLE_TODO',
+  type: c.TOGGLE_TODO,
   id
 });

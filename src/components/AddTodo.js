@@ -28,8 +28,6 @@ let AddTodo = ({ addTodo }) => {
   );
 };
 
-const mapDispatchToProps = {
+export default connect(null, {
   addTodo: addTodo
-};
-
-export default connect(null, mapDispatchToProps)(AddTodo);
+})(AddTodo);

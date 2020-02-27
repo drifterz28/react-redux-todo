@@ -1,13 +1,13 @@
 import React from 'react';
 import Footer from './Footer';
 import AddTodo from './AddTodo';
-import VisibleTodoList from './VisibleTodoList';
+import TodoList from './TodoList';
 import UndoRedo from './UndoRedo';
 
 const App = () => (
   <div>
     <AddTodo />
-    <VisibleTodoList />
+    <TodoList />
     <Footer />
     <UndoRedo />
   </div>

@@ -27,12 +27,11 @@ Link.propTypes = {
   setVisibilityFilter: PropTypes.func.isRequired
 };
 
-const mapStateToProps = (state, ownProps) => ({
-  active: ownProps.filter === state.visibilityFilter
-});
-
-const mapDispatchToProps = {
-  setVisibilityFilter
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Link);
+export default connect(
+  (state, ownProps) => ({
+    active: ownProps.filter === state.visibilityFilter
+  }),
+  {
+    setVisibilityFilter
+  }
+)(Link);

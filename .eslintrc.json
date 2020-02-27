@@ -40,6 +40,5 @@
       "react/no-render-return-value": false
     }
   },
-  "parser": "babel-eslint",
   "globals": { "cy": true, "Cypress": true }
 }
