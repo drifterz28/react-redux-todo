@@ -1,0 +1,65 @@
+Arguments: 
+  /Users/cwhitney/.nvm/versions/node/v12.9.0/bin/node /Users/cwhitney/.npm-global/bin/yarn format
+
+PATH: 
+  /Users/cwhitney/.nvm/versions/node/v12.9.0/bin:/Users/cwhitney/.npm-global/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Users/cwhitney/.nvm/versions/node/v12.9.0/bin:/Users/cwhitney/.npm-global/bin
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  12.9.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/cwhitney/src/todos-with-undo/package.json: Unexpected token } in JSON at position 811
+      at JSON.parse (<anonymous>)
+      at /Users/cwhitney/.npm-global/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/Users/cwhitney/.npm-global/lib/node_modules/yarn/lib/cli.js:304:30)
+      at /Users/cwhitney/.npm-global/lib/node_modules/yarn/lib/cli.js:315:13
+
+npm manifest: 
+  {
+    "name": "todos-with-undo",
+    "version": "0.0.1",
+    "private": true,
+    "devDependencies": {
+      "react-scripts": "^3.4.0"
+    },
+    "dependencies": {
+      "eslint": "^6.8.0",
+      "eslint-plugin-react": "^7.18.3",
+      "prettier": "^1.19.1",
+      "prop-types": "^15.7.2",
+      "react": "^16.13.0",
+      "react-dom": "^16.13.0",
+      "react-redux": "^7.2.0",
+      "redux": "^4.0.5",
+      "redux-undo": "^0.6.1"
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "eject": "react-scripts eject",
+      "test": "react-scripts test --env=node --passWithNoTests",
+      "format": "yarn prettier && yarn lint",
+      "format:staged": "pretty-quick --staged && yarn lint",
+      "prettier": "prettier \"src/**/*.js\" \"!src/.next/**\" --write",
+      "lint": "eslint \"src/**/*.js\" --fix",
+    },
+    "browserslist": [
+      ">0.2%",
+      "not dead",
+      "not ie <= 11",
+      "not op_mini all"
+    ]
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
